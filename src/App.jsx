@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { ProtectedRoute } from "./guards/ProtectedRoute";
+import { Route, Routes } from "react-router-dom";
+import { Login } from "./pages/login/login";
+import { Products } from "./pages/products/products";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1>hello</h1>
-    </>
+    <Routes>
+      {/* <Route path="/" element={<Home />} /> */}
+      <Route path="/login" element={<Login />} />
+      {/* <Route path="/terms" element={<Home />} /> */}
+      <Route
+        path="/products"
+        element={<ProtectedRoute>{<Products />}</ProtectedRoute>}
+      />
+    </Routes>
   );
 }
 
