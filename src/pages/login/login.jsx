@@ -91,9 +91,12 @@ export const Login = () => {
         login(data?.data?.user, data?.data?.accessToken);
         navigate("/products");
       } else {
-        // if()
-
-        alert(data?.messages[0] || "Login failed");
+        if (data?.messages[0]?.includes("User not found")) {
+          setErrors((prev) => ({
+            ...prev,
+            email: language?.login?.userNotExist,
+          }));
+        } else alert(data?.messages[0] || "Login failed");
       }
     } catch (err) {
       console.error("Login error:", err);
