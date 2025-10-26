@@ -1,0 +1,116 @@
+.dash-cont {
+  display: flex;
+  height: calc(100vh - 70px); /* full height minus navbar */
+  overflow: hidden; /* prevent double scroll */
+}
+
+.dash-sidebar {
+  width: 200px;
+  background-color: #ffffff;
+  padding: 0 1rem 0 2rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.dash-main-title {
+  flex: 1;
+  display: flex;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 1280px) {
+  .dash-sidebar {
+    display: none;
+  }
+
+  .dash-main-cont {
+    padding: 1rem 1rem 0.5rem 0.5rem;
+  }
+}
+
+.dash-menu-items-cont {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* dash contents  */
+
+.dash-main-cont {
+  padding: 1rem 2rem 0.5rem 1rem;
+  width: 100%;
+}
+
+.dash-action-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1/2;
+}
+
+.dash-search-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 300px;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 0 8px 12px; /* space for icon on right */
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  outline: none;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.search-input::placeholder {
+  color: #cccccc;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #0ba6df;
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px rgba(77, 208, 225, 0.5))
+    drop-shadow(0 0 12px rgba(77, 208, 225, 0.3));
+}
+
+.dash-btn-cont {
+  flex: 1/2;
+  display: flex;
+  gap: 20px;
+}
+
+.dash-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  padding: 1px 10px;
+  border-radius: 15px;
+  gap: 8px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.dash-btn-text {
+  color: #999999;
+  font-size: 16px;
+  font-weight: 500;
+}
