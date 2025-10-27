@@ -12,9 +12,16 @@ import {
   IconTagFilled,
   IconUserFilled,
 } from "@tabler/icons-react";
-import React from "react";
+import "./dashComponents.styles.css";
+import { useAuth } from "../../../providers/authProvider";
 
-const DashMenuItems = () => {
+const DashMenuItems = ({ language }) => {
+  const { logout } = useAuth();
+
+  const handleLogOutClick = () => {
+    logout();
+  };
+
   return (
     <>
       <div className="dash-menu-item">
@@ -23,7 +30,7 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconFileInvoice
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ alignContent: "end", color: "#73C8D2" }}
             size={20}
           />
         </div>
@@ -32,7 +39,7 @@ const DashMenuItems = () => {
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>Invoices</p>
+          <p>{language?.dashmenu?.invoices}</p>
         </div>
       </div>
 
@@ -42,7 +49,7 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconUserFilled
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#73C8D2", alignContent: "end" }}
             size={20}
           />
         </div>
@@ -51,7 +58,7 @@ const DashMenuItems = () => {
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>Customers</p>
+          <p>{language?.dashmenu?.customers}</p>
         </div>
       </div>
 
@@ -61,7 +68,7 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconSettings
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#0ba6df", alignContent: "end" }}
             size={20}
           />
         </div>
@@ -70,7 +77,7 @@ const DashMenuItems = () => {
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>My Business</p>
+          <p>{language?.dashmenu?.business}</p>
         </div>
       </div>
 
@@ -80,7 +87,7 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconNotebook
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#4FB7B3", alignContent: "end" }}
             size={20}
           />
         </div>
@@ -89,26 +96,27 @@ const DashMenuItems = () => {
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>Invoice Journal</p>
+          <p>{language?.dashmenu?.invoiceJournal}</p>
         </div>
       </div>
 
-      <div className="dash-menu-item">
+      <div className="dash-menu-item active-menu-item">
+        <div className="active-green-dot">🟢</div>
+
         <div
           className="dash-menu-icon"
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconTagFilled
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#F4991A", alignContent: "end" }}
             size={20}
           />
         </div>
-
         <div
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>Price List</p>
+          <p>{language?.dashmenu?.priceList}</p>
         </div>
       </div>
 
@@ -118,7 +126,7 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconFileInvoiceFilled
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#4FB7B3", alignContent: "end" }}
             size={20}
           />
         </div>
@@ -127,7 +135,7 @@ const DashMenuItems = () => {
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>Multiple Invoicing</p>
+          <p>{language?.dashmenu?.multipleInvoicing}</p>
         </div>
       </div>
 
@@ -137,7 +145,7 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconCircleDashedX
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#ED3F27", alignContent: "end" }}
             size={20}
           />
         </div>
@@ -146,7 +154,7 @@ const DashMenuItems = () => {
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>Unpaid Invoices</p>
+          <p>{language?.dashmenu?.unpaidInvoices}</p>
         </div>
       </div>
 
@@ -156,7 +164,7 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconCertificate
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#FDEB9E", alignContent: "end" }}
             size={20}
           />
         </div>
@@ -165,7 +173,7 @@ const DashMenuItems = () => {
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>Offer</p>
+          <p>{language?.dashmenu?.offer}</p>
         </div>
       </div>
 
@@ -175,16 +183,16 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconFileSettingsFilled
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#48B3AF", alignContent: "end" }}
             size={20}
           />
         </div>
 
         <div
           className="dash-menu-name"
-          style={{ fontSize: "16px", fontWeight: 500 }}
+          style={{ fontSize: "16px", fontWeight: 500, color: "#999999" }}
         >
-          <p>Inventory Control</p>
+          <p>{language?.dashmenu?.inventoryControl}</p>
         </div>
       </div>
 
@@ -194,16 +202,16 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconCalendarUser
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#239BA7", alignContent: "end" }}
             size={20}
           />
         </div>
 
         <div
           className="dash-menu-name"
-          style={{ fontSize: "16px", fontWeight: 500 }}
+          style={{ fontSize: "16px", fontWeight: 500, color: "#999999" }}
         >
-          <p>Member Invoicing</p>
+          <p>{language?.dashmenu?.memberInvoicing}</p>
         </div>
       </div>
 
@@ -213,7 +221,7 @@ const DashMenuItems = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconCloudUpload
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#7A85C1", alignContent: "end" }}
             size={20}
           />
         </div>
@@ -222,17 +230,17 @@ const DashMenuItems = () => {
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>Import/Export</p>
+          <p>{language?.dashmenu?.importExport}</p>
         </div>
       </div>
 
-      <div className="dash-menu-item">
+      <div className="dash-menu-item" onClick={handleLogOutClick}>
         <div
           className="dash-menu-icon"
           style={{ display: "flex", alignItems: "center" }}
         >
           <IconLogout
-            style={{ color: "#4E61D3", alignContent: "end" }}
+            style={{ color: "#A3DC9A", alignContent: "end" }}
             size={20}
           />
         </div>
@@ -241,7 +249,7 @@ const DashMenuItems = () => {
           className="dash-menu-name"
           style={{ fontSize: "16px", fontWeight: 500 }}
         >
-          <p>Log out</p>
+          <p>{language?.dashmenu?.logout}</p>
         </div>
       </div>
     </>

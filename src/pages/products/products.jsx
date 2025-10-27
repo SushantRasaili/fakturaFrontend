@@ -9,8 +9,11 @@ import { DashNavbar } from "./components/dashNavbar";
 import "./products.styles.css";
 import DashMenuItems from "./components/menuitems";
 import ProductPriceTable from "./components/dashTable";
+import { useLanguage } from "../../providers/languageProvider";
 
 export const Products = () => {
+  const { language } = useLanguage();
+
   return (
     <>
       <DashNavbar />
@@ -31,12 +34,12 @@ export const Products = () => {
                 borderColor: "#B3BFFF",
               }}
             >
-              Menu
+              {language?.dashmenu?.menu}
             </p>
           </div>
 
           <div className="dash-menu-items-cont">
-            <DashMenuItems />
+            <DashMenuItems language={language} />
             {/* <div className="dash-menu-item">
               <div
                 className="dash-menu-icon"
@@ -64,7 +67,9 @@ export const Products = () => {
               <div className="search-box">
                 <input
                   type="text"
-                  placeholder="Search Article No..."
+                  placeholder={
+                    language?.productaction?.searchArticlePlaceholder
+                  }
                   className="search-input"
                 />
                 <IconSearch className="search-icon" size={26} />
@@ -73,7 +78,7 @@ export const Products = () => {
               <div className="search-box">
                 <input
                   type="text"
-                  placeholder="Search Product..."
+                  placeholder={language?.productaction?.searchProduct}
                   className="search-input"
                 />
                 <IconSearch className="search-icon" size={26} />
@@ -82,23 +87,38 @@ export const Products = () => {
 
             <div className="dash-btn-cont">
               <div className="dash-btn-group">
-                <p className="dash-btn-text">New Product</p>
-                <IconCirclePlusFilled style={{ color: "green" }} />
+                <p className="dash-btn-text">
+                  {language?.productaction?.newProduct}
+                </p>
+                <IconCirclePlusFilled
+                  className="action-btn-icon"
+                  style={{ color: "green" }}
+                />
               </div>
 
               <div className="dash-btn-group">
-                <p className="dash-btn-text">Price List</p>
-                <IconPrinter style={{ color: "73C8D2" }} />
+                <p className="dash-btn-text">
+                  {language?.productaction?.priceList}
+                </p>
+                <IconPrinter
+                  className="action-btn-icon"
+                  style={{ color: "#73C8D2" }}
+                />
               </div>
 
               <div className="dash-btn-group">
-                <p className="dash-btn-text">Advanced Mode</p>
-                <IconCodeVariablePlus style={{ color: "73C8D2" }} />
+                <p className="dash-btn-text">
+                  {language?.productaction?.advancedMode}
+                </p>
+                <IconCodeVariablePlus
+                  className="action-btn-icon"
+                  style={{ color: "#73C8D2" }}
+                />
               </div>
             </div>
           </div>
           {/* Dash Price Tables */}
-          <ProductPriceTable />
+          <ProductPriceTable language={language} />
         </div>
       </div>
     </>

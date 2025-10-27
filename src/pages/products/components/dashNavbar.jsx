@@ -1,12 +1,14 @@
 import { useState } from "react";
-import "./dashNavbar.styles.css";
+import "./dashComponents.styles.css";
 import { useLanguage } from "../../../providers/languageProvider";
 import { IconMenu2 } from "@tabler/icons-react";
+import { useAuth } from "../../../providers/authProvider";
 
 export const DashNavbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const { setSelectedLang, selectedLang } = useLanguage();
+  const { user } = useAuth();
 
   const handleLanguageChange = (code) => {
     setSelectedLang(code);
@@ -36,8 +38,8 @@ export const DashNavbar = () => {
             className="profile-img"
           />
           <div className="profile-info">
-            <p className="profile-name">John Andre</p>
-            <p className="profile-address">Storford AS</p>
+            <p className="profile-name">{user.name}</p>
+            <p className="profile-address">{user.address}</p>
           </div>
         </div>
       </div>
