@@ -6,7 +6,7 @@ import { Products } from "./pages/products/products";
 function App() {
   return (
     <Routes>
-      {/* <Route path="/" element={<Home />} /> */}
+      <Route path="/" element={<div> Please visit login page</div>} />
       <Route path="/login" element={<Login />} />
       {/* <Route path="/terms" element={<Home />} /> */}
       <Route
