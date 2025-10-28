@@ -239,4 +239,8 @@
   .footer-cont {
     padding: 0 2rem;
   }
+
+  .footer-link {
+    font-weight: 400;
+  }
 }
