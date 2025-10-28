@@ -148,6 +148,12 @@
   }
 }
 
+@media (min-width: 769px) and (max-width: 1090px) {
+  .navbar {
+    margin: 0rem 6rem;
+  }
+}
+
 /* Medium devices (md) 768px and below */
 @media (max-width: 768px) {
   .navbar {

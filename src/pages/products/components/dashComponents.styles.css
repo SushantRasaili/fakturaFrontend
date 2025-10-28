@@ -314,7 +314,7 @@ th:nth-child(9) {
 }
 
 /* Tablet styles */
-@media (min-width: 726px) and (max-width: 969px) {
+@media (min-width: 791px) and (max-width: 969px) {
   th:nth-child(1) {
     width: 5%;
   }
@@ -352,7 +352,7 @@ th:nth-child(9) {
 }
 
 /* Phone landscape styles */
-@media (min-width: 481px) and (max-width: 725px) {
+@media (min-width: 481px) and (max-width: 790px) {
   th:nth-child(1) {
     width: 5%;
   }

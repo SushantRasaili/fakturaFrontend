@@ -27,7 +27,9 @@ export const Footer = () => {
       </div>
 
       <div className="footer-copyright">
-        <p>© Lättfaktura, CRO no. 638537, 2025. All rights reserved.</p>
+        <p style={{ textAlign: "center" }}>
+          © Lättfaktura, CRO no. 638537, 2025. All rights reserved.
+        </p>
       </div>
     </section>
   );

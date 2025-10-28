@@ -2,6 +2,7 @@ import { ProtectedRoute } from "./guards/ProtectedRoute";
 import { Link, Route, Routes } from "react-router-dom";
 import { Login } from "./pages/login/login";
 import { Products } from "./pages/products/products";
+import { Terms } from "./pages/terms/terms";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         }
       />
       <Route path="/login" element={<Login />} />
-      {/* <Route path="/terms" element={<Home />} /> */}
+      <Route path="/terms" element={<Terms />} />
       <Route
         path="/products"
         element={<ProtectedRoute>{<Products />}</ProtectedRoute>}
