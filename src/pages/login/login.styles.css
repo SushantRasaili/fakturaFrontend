@@ -1,32 +1,43 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-cont {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Background image */
 .bg-cont {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   z-index: -1;
 }
 
 .bg-img {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center center;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  display: block;
+  object-position: center;
 }
 
+/* Login container */
 .login-cont {
+  width: 100%;
+  max-width: 600px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 1px;
-  font-family: sans-serif;
-  padding: 5rem 1rem 1rem;
-  margin-bottom: 0;
+  align-items: center;
+  padding: 0;
 }
 
 .login-card {
@@ -35,7 +46,6 @@
   padding: 1rem 4rem 2rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   width: 100%;
-  max-width: 450px;
 }
 
 .login-title {
@@ -154,10 +164,18 @@
   transition: color 0.2s ease;
 }
 
+@media (max-width: 640px) {
+  .login-card {
+    max-width: 90%;
+    padding: 1rem 2rem 2rem;
+    margin-bottom: 4rem;
+  }
+}
+
 /* Small devices (sm) 640px and 340px between */
 @media (min-width: 460px) and (max-width: 640px) {
   .login-card {
-    max-width: 390px;
+    /* max-width: 390px; */
     padding: 1rem 2rem 2rem;
   }
 }
@@ -165,7 +183,7 @@
 /* Small devices (sm) 640px and 340px between */
 @media (min-width: 360px) and (max-width: 459px) {
   .login-card {
-    max-width: 250px;
+    /* max-width: 250px; */
     padding: 1rem 2rem 2rem;
   }
 }
@@ -173,7 +191,7 @@
 /* Small devices (sm) 640px and below */
 @media (min-width: 326px) and (max-width: 360px) {
   .login-card {
-    max-width: 250px;
+    /* max-width: 250px; */
     padding: 1rem 1rem 2rem;
   }
 }
@@ -181,7 +199,7 @@
 /* Small devices (sm) 640px and below */
 @media (min-width: 280px) and (max-width: 326px) {
   .login-card {
-    max-width: 240px;
+    /* max-width: 240px; */
     padding: 1rem 1rem 2rem;
   }
 }

@@ -104,87 +104,93 @@ export const Login = () => {
   };
 
   return (
-    <>
+    <div className="login-page">
       <Navbar />
 
-      <section className="login-cont">
-        <div className="bg-cont">
-          <img
-            src="	https://storage.123fakturera.se/public/wallpapers/sverige43.jpg"
-            className="bg-img"
-          />
-        </div>
+      <div className="bg-cont">
+        <img
+          src="	https://storage.123fakturera.se/public/wallpapers/sverige43.jpg"
+          className="bg-img"
+        />
+      </div>
 
-        <form className="login-card">
-          <h1 className="login-title">{language?.login?.login}</h1>
+      <div className="page-cont">
+        <section className="login-cont">
+          <form className="login-card">
+            <h1 className="login-title">{language?.login?.login}</h1>
 
-          {/* Email Field */}
-          <div className="login-field">
-            <label className="label">{language?.login?.emailLabel}</label>
+            {/* Email Field */}
+            <div className="login-field">
+              <label className="label">{language?.login?.emailLabel}</label>
 
-            <input
-              type="email"
-              placeholder={language?.login?.emailPlaceholder}
-              className="input"
-              value={formData.email}
-              onChange={handleEmailChange}
-              onBlur={handleEmailBlur}
-            />
-            {errors.email && <p className="error">{errors.email}</p>}
-          </div>
-
-          {/* Password Field */}
-          <div className="login-field">
-            <label className="label">{language?.login?.passwordLabel}</label>
-            <div className="password-wrapper">
               <input
-                type={showPassword ? "text" : "password"}
-                placeholder={language?.login?.passwordPlaceholder}
+                type="email"
+                placeholder={language?.login?.emailPlaceholder}
                 className="input"
-                value={formData.password}
-                onChange={handlePasswordChange}
-                onBlur={handlePasswordBlur}
+                value={formData.email}
+                onChange={handleEmailChange}
+                onBlur={handleEmailBlur}
               />
-              <button
-                type="button"
-                className="eye-btn"
-                onClick={() => setShowPassword(!showPassword)}
-                aria-label={showPassword ? "Hide password" : "Show password"}
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+              {errors.email && <p className="error">{errors.email}</p>}
+            </div>
+
+            {/* Password Field */}
+            <div className="login-field">
+              <label className="label">{language?.login?.passwordLabel}</label>
+              <div className="password-wrapper">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder={language?.login?.passwordPlaceholder}
+                  className="input"
+                  value={formData.password}
+                  onChange={handlePasswordChange}
+                  onBlur={handlePasswordBlur}
+                />
+                <button
+                  type="button"
+                  className="eye-btn"
+                  onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
                 >
-                  {showPassword ? <IconEye /> : <IconEyeOff />}
-                </svg>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    {showPassword ? <IconEye /> : <IconEyeOff />}
+                  </svg>
+                </button>
+              </div>
+              {errors.password && <p className="error">{errors.password}</p>}
+            </div>
+
+            {/* Submit Button */}
+            <div className="submit-cont">
+              <button
+                type="submit"
+                className="submit-btn"
+                onClick={handleSubmit}
+              >
+                {language?.login?.login}
               </button>
             </div>
-            {errors.password && <p className="error">{errors.password}</p>}
-          </div>
 
-          {/* Submit Button */}
-          <div className="submit-cont">
-            <button type="submit" className="submit-btn" onClick={handleSubmit}>
-              {language?.login?.login}
-            </button>
-          </div>
-
-          <div className="login-foot">
-            <a href="#" className="log-foot-link">
-              {language?.login?.register}
-            </a>
-            <a href="#" className="log-foot-link">
-              {language?.login?.forgetPassword}
-            </a>
-          </div>
-        </form>
-      </section>
+            <div className="login-foot">
+              <a href="#" className="log-foot-link">
+                {language?.login?.register}
+              </a>
+              <a href="#" className="log-foot-link">
+                {language?.login?.forgetPassword}
+              </a>
+            </div>
+          </form>
+        </section>
+      </div>
 
       <Footer />
-    </>
+    </div>
   );
 };
