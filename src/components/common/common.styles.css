@@ -137,17 +137,6 @@
   height: 21rem;
 }
 
-/* Small devices (sm) 640px and below */
-@media (max-width: 640px) {
-  .nav-items {
-    display: flex;
-  }
-
-  .navbar {
-    margin: 2rem 0rem;
-  }
-}
-
 @media (min-width: 769px) and (max-width: 1090px) {
   .navbar {
     margin: 0rem 6rem;
@@ -164,6 +153,17 @@
 
   .drop-menu {
     width: 14rem;
+  }
+}
+
+/* Small devices (sm) 640px and below */
+@media (max-width: 640px) {
+  .nav-items {
+    display: flex;
+  }
+
+  .navbar {
+    margin: 2rem 2rem 0.5rem;
   }
 }
 

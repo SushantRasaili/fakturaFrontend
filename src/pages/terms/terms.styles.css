@@ -79,7 +79,27 @@
 
 @media (max-width: 940px) {
   .terms-desc-cont {
-    width: 80%;
+    width: 90%;
+  }
+
+  .terms-desc-cont {
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 940px) {
+  .terms-desc-cont {
+    width: 90%;
+  }
+
+  .terms-desc-cont {
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 535px) {
+  .terms-desc-cont {
+    width: 97%;
   }
 
   .terms-desc-cont {
